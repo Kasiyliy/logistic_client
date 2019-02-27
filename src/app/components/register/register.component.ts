@@ -20,7 +20,7 @@ export function MustMatch(controlName: string, matchingControlName: string) {
 
     // set error on matchingControl if validation fails
     if (control.value !== matchingControl.value) {
-      matchingControl.setErrors({ mustMatch: true });
+      matchingControl.setErrors({mustMatch: true});
     } else {
       matchingControl.setErrors(null);
     }
@@ -37,6 +37,7 @@ export class RegisterComponent implements OnInit {
 
   isCompany = true;
   companyForm: FormGroup;
+  customerForm: FormGroup;
 
 
   constructor(private http: HttpClient, private builder: FormBuilder, private checkCompany: CheckCompanyBinService,
@@ -49,6 +50,22 @@ export class RegisterComponent implements OnInit {
       sellerCompanyNameEn: [null, Validators.required],
       sellerCompanyNameKk: [null, Validators.required],
       sellerCompanyNameRu: [null, Validators.required],
+      username: [null, Validators.required],
+      password: [null, Validators.required],
+      repassword: [null, Validators.required]
+    }, {
+      validator: MustMatch('password', 'repassword')
+    });
+
+    this.customerForm = this.builder.group({
+      iinOrBin: [null, [Validators.required, Validators.pattern('^[0-9]{12}$')]],
+      email: [null, Validators.compose([Validators.required, Validators.email])],
+      mobilePhone: [null, Validators.required],
+      phoneNumber: [null, Validators.required],
+      addInfo: [null, Validators.required],
+      customerNameEn: [null, Validators.required],
+      customerNameKk: [null, Validators.required],
+      customerNameRu: [null, Validators.required],
       username: [null, Validators.required],
       password: [null, Validators.required],
       repassword: [null, Validators.required]
@@ -75,16 +92,18 @@ export class RegisterComponent implements OnInit {
 
   addCustomer() {
     const customer = new Customer();
-    customer.addInfo = 'asd';
-    customer.customerNameEn = 'asd';
-    customer.customerNameKk = 'asd';
-    customer.customerNameRu = 'asd';
-    customer.email = 'asd';
-    customer.iinOrBin = 'asd';
-    customer.mobilePhone = 'asd';
-    customer.password = 'asd';
-    customer.phoneNumber = 'asd';
-    customer.username = 'asd';
+    customer.addInfo = this.customerForm.get('addInfo').value;
+    customer.customerNameEn = this.customerForm.get('customerNameEn').value;
+    customer.customerNameKk = this.customerForm.get('customerNameKk').value;
+    customer.customerNameRu = this.customerForm.get('customerNameRu').value;
+    customer.email = this.customerForm.get('email').value;
+    customer.iinOrBin = this.customerForm.get('iinOrBin').value;
+    customer.mobilePhone = this.customerForm.get('mobilePhone').value;
+    customer.password = this.customerForm.get('password').value;
+    customer.phoneNumber = this.customerForm.get('phoneNumber').value;
+    customer.username = this.customerForm.get('username').value;
+    console.log(customer);
+    this.customerForm.reset();
     this.customerService.add(customer);
   }
 

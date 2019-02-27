@@ -23,10 +23,11 @@
                   <!--БИН компании *-->
                 <!--</span>-->
                 <div *ngIf="companyForm.controls['sellerCompanyBin'].errors?.required">
-                  sellerCompanyBin is required
+                  необходимо ввести БИН
+
                 </div>
                 <div *ngIf="companyForm.controls['sellerCompanyBin'].errors?.pattern">
-                  sellerCompanyBin must length of 12
+                  размер БИН 12
                 </div>
               </div>
 
@@ -35,14 +36,14 @@
                 <label for="sellerCompanyPhone">Рабочий телефон *</label>
                 <input formControlName="sellerCompanyPhone" type="text" id="sellerCompanyPhone">
                 <div *ngIf="companyForm.controls['sellerCompanyPhone'].errors?.required">
-                  sellerCompanyPhone is required
+                  необходимо ввести рабочий телефон
                 </div>
               </div>
               <div class="single-input single-input-half">
                 <label for="sellerCompanyMobilePhone">Мобильный телефон *</label>
                 <input formControlName="sellerCompanyMobilePhone" type="text" id="sellerCompanyMobilePhone">
                 <div *ngIf="companyForm.controls['sellerCompanyMobilePhone'].errors?.required">
-                  sellerCompanyMobilePhone is required
+                  необходимо ввести моб телефон
                 </div>
               </div>
 
@@ -50,35 +51,35 @@
                 <label for="username">Логин компании *</label>
                 <input formControlName="username" type="text" name="login_company" id="username">
                 <div *ngIf="companyForm.controls['username'].errors?.required">
-                  username is required
+                  необходимо ввести логин
                 </div>
               </div>
               <div class="single-input single-input-half">
                 <label for="sellerCompanyNameKk">Наименование компании kz*</label>
                 <input formControlName="sellerCompanyNameKk" type="text" id="sellerCompanyNameKk">
                 <div *ngIf="companyForm.controls['sellerCompanyNameKk'].errors?.required">
-                  sellerCompanyNameKk is required
+                  необходимо ввести наименование
                 </div>
               </div>
               <div class="single-input single-input-half">
                 <label for="sellerCompanyNameRu">Наименование компании ru*</label>
                 <input formControlName="sellerCompanyNameRu" type="text" id="sellerCompanyNameRu">
                 <div *ngIf="companyForm.controls['sellerCompanyNameRu'].errors?.required">
-                  sellerCompanyNameRu is required
+                  необходимо ввести наименование
                 </div>
               </div>
               <div class="single-input single-input-half">
                 <label for="sellerCompanyNameEn">Наименование компании en*</label>
                 <input formControlName="sellerCompanyNameEn" type="text"  id="sellerCompanyNameEn">
                 <div *ngIf="companyForm.controls['sellerCompanyNameEn'].errors?.required">
-                  sellerCompanyNameEn is required
+                  необходимо ввести наименование
                 </div>
               </div>
               <div class="single-input single-input-half">
                 <label for="sellerCompanyEmail">Email почта *</label>
                 <input formControlName="sellerCompanyEmail" type="text" name="sellerCompanyEmail" id="sellerCompanyEmail">
                 <div *ngIf="companyForm.controls['sellerCompanyEmail'].errors?.required">
-                  sellerCompanyEmail is required
+                  необходимо ввести почту
                 </div>
                 <div *ngIf="companyForm.controls['sellerCompanyEmail'].errors?.email">
                   sellerCompanyEmail must be an eamil
@@ -89,19 +90,20 @@
                 <label for="password">Пароль компании *</label>
                 <input formControlName="password" type="text" name="password" id="password">
                 <div *ngIf="companyForm.controls['password'].errors?.required">
-                  password is required
+                  необходимо ввести пароль
                 </div>
               </div>
               <div class="single-input single-input-half">
                 <label for="repassword">Подтверждение пароля *</label>
                 <input formControlName="repassword" type="text" id="repassword">
                 <div *ngIf="companyForm.controls['repassword'].errors?.required">
-                  repassword is required
+                  необходимо подтверждать пароль
                 </div>
                 <div *ngIf="companyForm.controls['repassword'].errors?.mustMatch">
-                  Passwords must match
+                  Пароли должны совпадать
                 </div>
               </div>
+
 
               <div class="single-input">
                 <button [disabled]="!companyForm.valid" (click)="addCompany()"
@@ -119,14 +121,93 @@
       <div class="col-lg-12" *ngIf="!isCompany">
         <h5>РЕГИСТРАЦИЯ ФИЗ.ЛИЦ</h5>
         <div class="login-form-wrapper">
-          <form action="#" class="ho-form ho-form-boxed">
+          <form action="#" class="ho-form ho-form-boxed" [formGroup]="customerForm">
             <div class="ho-form-inner">
               <div class="single-input single-input-half">
-                <label for="company_name">Наименование компании *</label>
-                <input type="text" name="company_name" id="company_name">
+                <label for="addInfo">Инфо клиента *</label>
+                <input type="text" formControlName="addInfo"  id="addInfo">
+                <div *ngIf="customerForm.controls['addInfo'].errors?.required">
+                  необходимо ввести инфо                </div>
               </div>
+
+              <div class="single-input single-input-half">
+                <label for="customerNameKk">Наименование клиента kz*</label>
+                <input formControlName="customerNameKk" type="text" id="customerNameKk">
+                <div *ngIf="customerForm.controls['customerNameKk'].errors?.required">
+                  необходимо ввести наименование                </div>
+              </div>
+              <div class="single-input single-input-half">
+                <label for="customerNameRu">Наименование клиента ru*</label>
+                <input formControlName="customerNameRu" type="text" id="customerNameRu">
+                <div *ngIf="customerForm.controls['customerNameRu'].errors?.required">
+                  необходимо ввести наименование                </div>
+              </div>
+              <div class="single-input single-input-half">
+                <label for="customerNameEn">Наименование клиента en*</label>
+                <input formControlName="customerNameEn" type="text"  id="customerNameEn">
+                <div *ngIf="customerForm.controls['customerNameEn'].errors?.required">
+                  необходимо ввести наименование                </div>
+              </div>
+              <div class="single-input single-input-half">
+                <label for="email">Email почта *</label>
+                <input formControlName="email" type="email" name="email" id="email">
+                <div *ngIf="customerForm.controls['email'].errors?.required">
+                  необходимо ввести почту                </div>
+                <div *ngIf="customerForm.controls['email'].errors?.email">
+                  должны ввести почту
+                </div>
+              </div>
+              <div class="single-input single-input-half">
+                <label for="iinOrBin">ИИН клиента *</label>
+                <input type="text" formControlName="iinOrBin" id="iinOrBin">
+                <div *ngIf="customerForm.controls['iinOrBin'].errors?.required">
+                  необходимо ввести пароль                </div>
+                <div *ngIf="customerForm.controls['iinOrBin'].errors?.pattern">
+                  размер ИИН 12
+                </div>
+              </div>
+              <div class="single-input single-input-half">
+                <label for="mobilePhone">Мобильный телефон *</label>
+                <input formControlName="mobilePhone" type="text" id="mobilePhone">
+                <div *ngIf="customerForm.controls['mobilePhone'].errors?.required">
+                  необходимо ввести пароль                </div>
+              </div>
+              <div class="single-input single-input-half">
+                <label for="phoneNumber">Домашний телефон *</label>
+                <input formControlName="phoneNumber" type="text" id="phoneNumber">
+                <div *ngIf="customerForm.controls['phoneNumber'].errors?.required">
+                  необходимо ввести пароль
+                </div>
+              </div>
+              <div class="single-input single-input-half">
+                <label for="username">Логин клиента *</label>
+                <input formControlName="username" type="text" name="login_company" id="username2">
+                <div *ngIf="customerForm.controls['username'].errors?.required">
+                  необходимо ввести пароль
+                </div>
+              </div>
+              <div class="single-input single-input-half">
+                <label for="password">Пароль клиента *</label>
+                <input formControlName="password" type="text" name="password" id="password2">
+                <div *ngIf="customerForm.controls['password'].errors?.required">
+                  необходимо ввести пароль
+                </div>
+              </div>
+              <div class="single-input single-input-half">
+                <label for="repassword">Подтверждение пароля *</label>
+                <input formControlName="repassword" type="text" id="repassword2">
+                <div *ngIf="customerForm.controls['repassword'].errors?.required">
+                  необходимо подтверждать пароль
+                </div>
+                <div *ngIf="customerForm.controls['repassword'].errors?.mustMatch">
+                  Пароли должны совпадать
+                </div>
+              </div>
+
+
               <div class="single-input">
-                <button (click)="addCustomer()" type="submit" class="ho-button ho-button-dark">
+                <button [disabled]="!customerForm.valid" (click)="addCustomer()"
+                        [ngClass]="{'disabled' : !customerForm.valid}" class="btn btn-success">
                   <span>Регистрация</span>
                 </button>
               </div>
