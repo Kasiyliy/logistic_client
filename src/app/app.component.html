@@ -1,21 +1,76 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<app-nav></app-nav>
 
-<router-outlet></router-outlet>
+
+<!-- Page Conttent -->
+<main class="page-content">
+
+
+
+
+  <router-outlet>
+
+  </router-outlet>
+
+
+  <!-- Features Area -->
+  <div class="ho-section features-area bg-white ptb-30">
+    <div class="container">
+      <div class="row">
+
+        <!-- Single Feature -->
+        <div class="col-lg-3 col-md-6 col-12">
+          <div class="featurebox">
+            <i class="flaticon-shipped"></i>
+            <h5>Бесплатная доставка</h5>
+            <p>Бесплатная доставка на все заказы США или заказ выше 200 долларов</p>
+          </div>
+        </div>
+        <!--// Single Feature -->
+
+        <!-- Single Feature -->
+        <div class="col-lg-3 col-md-6 col-12">
+          <div class="featurebox">
+            <i class="flaticon-support-1"></i>
+            <h5>Поддержка 24/7</h5>
+            <p>Свяжитесь с нами 24 часа в сутки, 7 дней в неделю</p>
+          </div>
+        </div>
+        <!--// Single Feature -->
+
+        <!-- Single Feature -->
+        <div class="col-lg-3 col-md-6 col-12">
+          <div class="featurebox">
+            <i class="flaticon-money-back"></i>
+            <h5>60-дневный возврат</h5>
+            <p>Если вам это не нравится, у вас есть 60 дней, чтобы вернуть его.</p>
+          </div>
+        </div>
+        <!--// Single Feature -->
+
+        <!-- Single Feature -->
+        <div class="col-lg-3 col-md-6 col-12">
+          <div class="featurebox">
+            <i class="flaticon-credit-card"></i>
+            <h5>100% оплата безопасна</h5>
+            <p>Мы гарантируем безопасную оплату с VISA</p>
+          </div>
+        </div>
+        <!--// Single Feature -->
+
+      </div>
+    </div>
+  </div>
+  <!--// Features Area -->
+
+
+
+
+
+
+
+</main>
+<!--// Page Conttent -->
+
+
+
+<app-footer></app-footer>

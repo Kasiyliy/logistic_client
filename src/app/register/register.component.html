@@ -1,0 +1,93 @@
+
+<!-- My Account Page -->
+<div class="my-account-area ptb-30">
+
+  <div class="container">
+    <div class="row">
+      <div class="m-1">
+
+        <button class="btn m-1"  [ngClass]="{'btn-primary' : isCompany , 'btn-outline-primary' : !isCompany}" (click)="isCompany = true">Компания</button>
+
+        <button class="btn m-1" [ngClass]="{'btn-primary' : !isCompany , 'btn-outline-primary' : isCompany}" (click)="isCompany = false">Физ лицо</button>
+      </div>
+
+      <div class="col-lg-12" *ngIf="isCompany">
+        <h5>РЕГИСТРАЦИЯ КОМПАНИИ</h5>
+        <div class="login-form-wrapper">
+          <form action="#" class="ho-form ho-form-boxed " [formGroup]="companyForm">
+            <div class="ho-form-inner">
+              <div class="single-input single-input-half">
+                <label for="bin">БИН компании *</label>
+                <input type="text" formControlName="bin" id="bin" #bin>
+                <span *ngIf="companyForm.controls['bin'].errors.required && companyForm.controls['bin'].invalid && (companyForm.controls['bin'].dirty || companyForm.controls['bin'].touched)" class="text-danger">
+                  БИН компании *
+                </span>
+              </div>
+
+
+              <div class="single-input single-input-half">
+                <label for="rab_phone">Рабочий телефон *</label>
+                <input type="text" name="rab_phone" id="rab_phone">
+              </div>
+              <div class="single-input single-input-half">
+                <label for="mob_phone">Мобильный телефон *</label>
+                <input type="text" name="mob_phone" id="mob_phone">
+              </div>
+
+              <div class="single-input single-input-half">
+                <label for="login_company">Логин компании *</label>
+                <input type="text" name="login_company" id="login_company">
+              </div>
+              <div class="single-input single-input-half">
+                <label for="email">Email почта *</label>
+                <input type="text" name="email" id="email">
+              </div>
+
+              <div class="single-input single-input-half">
+                <label for="pass_company">Пароль компании *</label>
+                <input type="text" name="pass_company" id="pass_company">
+              </div>
+              <div class="single-input single-input-half">
+                <label for="pass_company1">Подтверждение пароля *</label>
+                <input type="text" id="pass_company1">
+              </div>
+
+              <div class="single-input">
+                <button (click)="addCompany()"
+                        class="ho-button ho-button-dark">
+                  <span>Регистрация</span>
+                </button>
+              </div>
+
+            </div>
+          </form>
+        </div>
+      </div>
+
+
+      <div class="col-lg-12" *ngIf="!isCompany">
+        <h5>РЕГИСТРАЦИЯ ФИЗ.ЛИЦ</h5>
+        <div class="login-form-wrapper">
+          <form action="#" class="ho-form ho-form-boxed">
+            <div class="ho-form-inner">
+              <div class="single-input single-input-half">
+                <label for="company_name">Наименование компании *</label>
+                <input type="text" name="company_name" id="company_name">
+              </div>
+              <div class="single-input">
+                <button type="submit" class="ho-button ho-button-dark">
+                  <span>Регистрация</span>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!--// Registr Form -->
+
+
+
+    </div>
+  </div>
+</div>
+<!--// My Account Page -->
