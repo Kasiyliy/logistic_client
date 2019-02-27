@@ -14,7 +14,7 @@ export class NavComponent implements OnInit {
 
   ngOnInit() {
 
-    $('.header-accountbox-trigger').on('click', function () {
+    $('.header-accountbox-trigger').on('click',  () => {
       $('.header-accountbox').slideToggle();
     });
 

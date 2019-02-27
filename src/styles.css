@@ -3,3 +3,5 @@
 @import "assets/css/custom.css";
 @import "assets/css/plugins.css";
 @import "assets/css/style.css";
+@import '~ngx-toastr/toastr.css';
+
