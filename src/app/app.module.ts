@@ -12,7 +12,7 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {ReactiveFormsModule, FormBuilder, FormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
-import * as $ from 'jquery';
+import {APP_BASE_HREF} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -26,16 +26,17 @@ import * as $ from 'jquery';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    AppRoutingModule
   ],
   providers: [
     FormBuilder,
-    HttpClient
+    HttpClient,
+    {provide: APP_BASE_HREF, useValue : '/' }
   ],
   bootstrap: [AppComponent]
 })
