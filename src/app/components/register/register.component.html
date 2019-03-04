@@ -19,12 +19,8 @@
               <div class="single-input single-input-half">
                 <label for="sellerCompanyBin">БИН компании *</label>
                 <input type="text" formControlName="sellerCompanyBin" id="sellerCompanyBin">
-                <!--<span *ngIf="companyForm.controls['bin'].errors?.required && companyForm.controls['bin'].invalid && (companyForm.controls['bin'].dirty || companyForm.controls['bin'].touched)" class="text-danger">-->
-                  <!--БИН компании *-->
-                <!--</span>-->
                 <div class="text-danger" *ngIf="companyForm.controls['sellerCompanyBin'].errors?.required && !companyForm.controls['sellerCompanyBin'].pristine">
                   необходимо ввести БИН
-
                 </div>
                 <div class="text-danger" *ngIf="companyForm.controls['sellerCompanyBin'].errors?.pattern">
                   размер БИН 12

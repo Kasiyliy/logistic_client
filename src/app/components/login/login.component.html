@@ -8,20 +8,28 @@
       <div class="col-lg-12">
         <h5>ВХОД</h5>
         <div class="login-form-wrapper">
-          <form action="#" class="ho-form ho-form-boxed">
+          <form action="#" class="ho-form ho-form-boxed" [formGroup]="loginForm">
             <div class="ho-form-inner">
               <div class="single-input single-input-half">
-                <label for="login_company">Логин *</label>
-                <input type="text" name="login_company" id="login_company">
+                <label for="username">Логин *</label>
+                <input type="text" formControlName="username" id="username">
+              </div>
+              <div class="text-danger" *ngIf="loginForm.controls['username'].errors?.required && !loginForm.controls['username'].pristine">
+                необходимо ввести логин
               </div>
               <div class="single-input single-input-half">
-                <label for="login-form-password">Пароль *</label>
-                <input type="password" name="login-form-password" id="login-form-password">
+                <label for="password">Пароль *</label>
+                <input type="password" formControlName="password" id="password">
+              </div>
+              <div class="text-danger" *ngIf="loginForm.controls['password'].errors?.required && !loginForm.controls['password'].pristine">
+                необходимо ввести пароль
               </div>
               <div class="single-input">
-                <button type="submit" class="ho-button ho-button-dark mr-3">
-                  <span>Войти</span>
-                </button>
+                  <button [disabled]="!loginForm.valid" (click)="login()"
+                          [ngClass]="{'disabled' : !loginForm.valid}" class="btn btn-success">
+                    <span>Войти</span>
+                  </button>
+
                 <div class="checkbox-input">
                   <input type="checkbox" name="login-form-remember" id="login-form-remember">
                   <label for="login-form-remember">Запомни меня</label>
