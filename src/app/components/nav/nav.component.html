@@ -56,7 +56,7 @@
           <div class="header-icons">
             <div class="header-account">
               <button class="header-accountbox-trigger"><span class="lnr lnr-user"></span> Мой аккаунт <i class="ion ion-ios-arrow-down"></i></button>
-              <ul class="header-accountbox dropdown-list">
+              <ul class="header-accountbox dropdown-list" *ngIf="!authService.authorized.value">
                 <li>
                   <a routerLink="login">Вход</a>
                 </li>
@@ -65,9 +65,14 @@
                 </li>
 
               </ul>
+              <ul class="header-accountbox dropdown-list" *ngIf="authService.authorized.value">
+                <li >
+                  <a href="" (click)="logout()">Выход</a>
+                </li>
+              </ul>
             </div>
             <div class="header-cart">
-              <a class="header-carticon" href="cart.html"><i class="lnr lnr-cart"></i><span class="count">2</span></a>
+              <a class="header-carticon" href="/cart"><i class="lnr lnr-cart"></i><span class="count">2</span></a>
 
 
 
@@ -89,22 +94,22 @@
           <!-- Navigation -->
           <nav class="ho-navigation">
             <ul>
-              <li><a href="index.html">Главная</a></li>
+              <li><a routerLink="/">Главная</a></li>
               <li class="dropdown-holder">
-                <a href="index.html">Сервисы</a>
+                <a>Сервисы</a>
                 <ul class="hodropdown">
-                  <li><a href="index.html">Логистика</a></li>
-                  <li><a href="index.html">Дорожный путь транспорта</a></li>
-                  <li><a href="index.html">Управление складскими помещениями</a></li>
-                  <li><a href="index.html">Перевозчик жидких грузов</a></li>
-                  <li><a href="index.html">Авиаперевозка</a></li>
-                  <li><a href="index.html">Туристическая сеть</a></li>
+                  <li><a routerLink="logistics">Логистика</a></li>
+                  <li><a routerLink="">Дорожный путь транспорта</a></li>
+                  <li><a routerLink="storage/management">Управление складскими помещениями</a></li>
+                  <li><a routerLink="transfer">Перевозчик жидких грузов</a></li>
+                  <li><a routerLink="air">Авиаперевозка</a></li>
+                  <li><a routerLink="tourist">Туристическая сеть</a></li>
                 </ul>
               </li>
 
 
-              <li><a href="index.html">Оплата и доставка</a></li>
-              <li><a href="index.html">О нас</a></li>
+              <li><a routerLink="payment">Оплата и доставка</a></li>
+              <li><a routerLink="about">О нас</a></li>
 
 
               <li>

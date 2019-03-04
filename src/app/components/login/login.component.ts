@@ -3,6 +3,7 @@ import {FormsModule, FormGroup, Validators, FormBuilder} from '@angular/forms';
 import {AuthService} from '../../services/auth/auth.service';
 import {ToastrService} from 'ngx-toastr';
 import {Router} from '@angular/router';
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -30,7 +31,8 @@ export class LoginComponent implements OnInit {
         this.toastrService.warning(resp);
       } else {
         this.toastrService.success('Authorized');
-        console.log(resp);
+        this.authService.authorized.next(true);
+        localStorage.setItem(environment.apiToken, resp);
         this.router.navigateByUrl('/');
       }
 
@@ -40,5 +42,6 @@ export class LoginComponent implements OnInit {
       console.log(err);
     });
   }
+
 
 }

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import * as $ from 'jquery';
+import {AuthService} from '../../services/auth/auth.service';
 
 
 @Component({
@@ -9,16 +10,18 @@ import * as $ from 'jquery';
 })
 export class NavComponent implements OnInit {
 
-  constructor() {
+
+  constructor(public authService: AuthService) {
+
   }
 
   ngOnInit() {
-
-    $('.header-accountbox-trigger').on('click',  () => {
+    $('.header-accountbox-trigger').on('click', () => {
       $('.header-accountbox').slideToggle();
     });
-
-
   }
 
+  logout() {
+    this.authService.logout();
+  }
 }
