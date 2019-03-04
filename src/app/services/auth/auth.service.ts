@@ -73,4 +73,30 @@ export class AuthService {
     this.toastrService.success('You logged out');
     this.router.navigateByUrl('/login');
   }
+
+  getMyRole() {
+
+    if (!this.getMyApi()) {
+      return null;
+    }
+    const base64Url = this.getMyApi().split('.')[1];
+    const base64 = base64Url.replace('-', '+').replace('_', '/');
+    return (JSON.parse(window.atob(base64))).role;
+  }
+
+  getMyUsername() {
+
+    if (!this.getMyApi()) {
+      return null;
+    }
+
+    const base64Url = this.getMyApi().split('.')[1];
+    const base64 = base64Url.replace('-', '+').replace('_', '/');
+    return (JSON.parse(window.atob(base64))).sub;
+  }
+
+  getMyApi() {
+    return localStorage.getItem(environment.apiToken);
+  }
+
 }
