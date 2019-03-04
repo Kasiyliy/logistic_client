@@ -13,6 +13,7 @@ import {ReactiveFormsModule, FormBuilder, FormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import {APP_BASE_HREF} from '@angular/common';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import {APP_BASE_HREF} from '@angular/common';
     FooterComponent,
     LoginComponent,
     RegisterComponent,
+    ProfileComponent,
 
   ],
   imports: [

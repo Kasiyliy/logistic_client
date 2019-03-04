@@ -115,6 +115,9 @@
               <li>
                 <a routerLink="contact"> Контакты</a>
               </li>
+              <li *ngIf="authService.authorized.value">
+                <a routerLink="profile"> Профиль</a>
+              </li>
             </ul>
           </nav>
           <!--// Navigation -->
