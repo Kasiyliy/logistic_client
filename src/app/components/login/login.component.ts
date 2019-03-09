@@ -27,10 +27,10 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.authService.login(this.loginForm.get('username').value, this.loginForm.get('password').value).toPromise().then(resp => {
-      if (resp === 'Incorrect username or password') {
+      if (resp === 'Неправильный логин или пароль') {
         this.toastrService.warning(resp);
       } else {
-        this.toastrService.success('Authorized');
+        this.toastrService.success('Авторизовано');
         this.authService.authorized.next(true);
         localStorage.setItem(environment.apiToken, resp);
         this.router.navigateByUrl('/');
@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
 
 
     }, err => {
-      this.toastrService.error('Failed');
+      this.toastrService.error('Не удалось авторизоваться');
       console.log(err);
     });
   }

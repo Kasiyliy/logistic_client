@@ -1,3 +1,4 @@
+import { CategoryService } from 'src/app/services/category.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -14,6 +15,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import {APP_BASE_HREF} from '@angular/common';
 import { ProfileComponent } from './components/profile/profile.component';
+import { HomeComponent } from './components/home/home.component';
+import { CategoryComponent } from './components/category/category.component';
+import { AddCategoryComponent } from 'src/app/components/profile/add-category/add-category.component';
+import { ListCategoryComponent } from './components/profile/list-category/list-category.component';
+import { EditCategoryComponent } from './components/profile/edit-category/edit-category.component';
+import { ListProductComponent } from './components/profile/list-product/list-product.component';
+import { ListSubcategoryComponent } from 'src/app/components/profile/list-subcategory/list-subcategory.component';
+import { AddSubcategoryComponent } from 'src/app/components/profile/add-subcategory/add-subcategory.component';
+import { AddProductComponent } from 'src/app/components/profile/add-product/add-product.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +34,15 @@ import { ProfileComponent } from './components/profile/profile.component';
     LoginComponent,
     RegisterComponent,
     ProfileComponent,
+    HomeComponent,
+    CategoryComponent,
+    AddCategoryComponent,
+    ListCategoryComponent,
+    EditCategoryComponent,
+    ListProductComponent,
+    ListSubcategoryComponent,
+    AddSubcategoryComponent,
+    AddProductComponent,
 
   ],
   imports: [
@@ -38,7 +57,8 @@ import { ProfileComponent } from './components/profile/profile.component';
   providers: [
     FormBuilder,
     HttpClient,
-    {provide: APP_BASE_HREF, useValue : '/' }
+    {provide: APP_BASE_HREF, useValue : '/' },
+    CategoryService
   ],
   bootstrap: [AppComponent]
 })

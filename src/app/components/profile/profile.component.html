@@ -1,0 +1,110 @@
+<div class="breadcrumb-area bg-grey">
+    <div class="container">
+        <div class="ho-breadcrumb">
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li>Мой Аккаунт</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--// Breadcrumb Area -->
+<main class="page-content">
+
+    <!-- Account Page Area -->
+    <div class="account-page-area ptb-30">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-3">
+                    <ul class="nav myaccount-tab-trigger" id="account-page-tab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="account-dashboard-tab" data-toggle="tab" href="#account-dashboard"
+                                role="tab" aria-controls="account-dashboard" aria-selected="true">Категории</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="account-orders-tab" data-toggle="tab" href="#account-orders"
+                                role="tab" aria-controls="account-orders" aria-selected="false">Подкатегории</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="account-address-tab" data-toggle="tab" href="#account-address"
+                                role="tab" aria-controls="account-address" aria-selected="false">Товары</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="account-details-tab" data-toggle="tab" href="#account-details"
+                                role="tab" aria-controls="account-details" aria-selected="false">Аккаунт
+                                </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="account-logout-tab" href="login-register.html" role="tab"
+                                aria-selected="false">Выйти</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-9">
+                    <div class="tab-content myaccount-tab-content" id="account-page-tab-content">
+                        <div class="tab-pane fade show active" id="account-dashboard" role="tabpanel"
+                            aria-labelledby="account-dashboard-tab">
+                            <div class="myaccount-dashboard">
+                                <app-list-category></app-list-category>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="account-orders" role="tabpanel" aria-labelledby="account-orders-tab">
+                            <div class="myaccount-orders">
+
+                                <div class="table table-responsive">
+                                    <app-list-subcategory></app-list-subcategory>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="account-address" role="tabpanel" aria-labelledby="account-address-tab">
+                            <div class="myaccount-address">
+                              <div class="table-responsive">
+                                <app-list-product></app-list-product>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="account-details" role="tabpanel" aria-labelledby="account-details-tab">
+                            <div class="myaccount-details">
+                                <form action="#" class="ho-form">
+                                    <div class="ho-form-inner">
+                                        <div class="single-input single-input-half">
+                                            <label for="account-details-firstname">First Name*</label>
+                                            <input type="text" id="account-details-firstname">
+                                        </div>
+                                        <div class="single-input single-input-half">
+                                            <label for="account-details-lastname">Last Name*</label>
+                                            <input type="text" id="account-details-lastname">
+                                        </div>
+                                        <div class="single-input">
+                                            <label for="account-details-email">Email*</label>
+                                            <input type="email" id="account-details-email">
+                                        </div>
+                                        <div class="single-input">
+                                            <label for="account-details-oldpass">Current Password(leave blank
+                                                to leave unchanged)</label>
+                                            <input type="password" id="account-details-oldpass">
+                                        </div>
+                                        <div class="single-input">
+                                            <label for="account-details-newpass">New Password (leave blank to
+                                                leave unchanged)</label>
+                                            <input type="password" id="account-details-newpass">
+                                        </div>
+                                        <div class="single-input">
+                                            <label for="account-details-confpass">Confirm New Password</label>
+                                            <input type="password" id="account-details-confpass">
+                                        </div>
+                                        <div class="single-input">
+                                            <button class="ho-button ho-button-dark" type="submit"><span>SAVE
+                                                    CHANGES</span></button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

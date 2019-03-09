@@ -16,9 +16,9 @@ export class CustomerService {
 
   constructor(private http: HttpClient, private toastr: ToastrService) {
     this.headers = new HttpHeaders();
-    this.headers.append('Access-Control-Allow-Methods', 'GET, POST');
-    this.headers.append('Access-Control-Allow-Origin', '*');
-    this.headers.append('Content-Type', 'application/json');
+    this.headers = this.headers.append('Access-Control-Allow-Methods', 'GET, POST');
+    this.headers = this.headers.append('Access-Control-Allow-Origin', '*');
+    this.headers = this.headers.append('Content-Type', 'application/json');
   }
 
   public add(customer: Customer) {

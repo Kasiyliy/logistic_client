@@ -1,0 +1,44 @@
+<div class="col-md-6">
+    <h2> Продукты</h2>
+    <button class="btn btn-primary" (click)= "addProduct()" > Добавить  Продукт</button>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th class="hidden">Id</th>
+        <th>ID категория продукта</th>
+        <th>Описание продукта</th>
+        <th>ID продукта</th>
+        <th>Наименование EN</th>
+        <th>Наименование KZ</th>
+        <th>Наименование RU</th>
+        <th>ID категории продавца</th>
+        <th>ID категории компании</th>
+        <th>Характеристика</th>
+        <th>ID подкатегории </th>
+        <th>Редактировать </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let product of products">
+        <td class="hidden"></td>
+        <td>{{product.categoryId}}</td>
+        <td>{{product.description}}</td>
+        <td>{{product.productId}}</td>
+        <td>{{product.productNameEn}}</td>
+        <td>{{product.productNameKk}}</td>
+        <td>{{product.productNameRu}}</td>
+        <td>{{product.sellerCategoryId}}</td>
+        <td>{{product.sellerCompanyId}}</td>
+        <td>{{product.specialCharacteristicsId}}</td>
+        <td>{{product.subCategoryId}}</td>
+        <td>
+          <div class='d-flex'>
+
+          <button class="btn btn-danger m-2"  > Удалить</button>
+
+          <button class="btn btn-primary m-2"   > Изменить</button>
+          </div></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>

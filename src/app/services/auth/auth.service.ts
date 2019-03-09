@@ -25,7 +25,7 @@ export class AuthService {
 
   checkThenRedirect() {
     if (!this.validateToken() || !localStorage.getItem(environment.apiToken)) {
-      this.toastrService.error('Login first!');
+      this.toastrService.error('Нужно авторизоваться!');
       this.router.navigateByUrl('/login');
     }
   }
@@ -70,8 +70,8 @@ export class AuthService {
   logout() {
     this.authorized.next(false);
     localStorage.clear();
-    this.toastrService.success('You logged out');
-    this.router.navigateByUrl('/login');
+    this.toastrService.success('Вы вышли из системы');
+    this.router.navigateByUrl('login');
   }
 
   getMyRole() {

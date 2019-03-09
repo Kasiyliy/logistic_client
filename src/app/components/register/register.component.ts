@@ -71,6 +71,7 @@ export class RegisterComponent implements OnInit {
     }, {
       validator: MustMatch('password', 'repassword')
     });
+
   }
 
   addCompany() {
@@ -90,7 +91,7 @@ export class RegisterComponent implements OnInit {
   }
 
   addCustomer() {
-    const customer = new Customer();
+    let customer = new Customer();
     customer.addInfo = this.customerForm.get('addInfo').value;
     customer.customerNameEn = this.customerForm.get('customerNameEn').value;
     customer.customerNameKk = this.customerForm.get('customerNameKk').value;

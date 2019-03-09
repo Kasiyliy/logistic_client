@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from '../../services/auth/auth.service';
 
 @Component({
   selector: 'app-contact',
@@ -8,10 +7,10 @@ import {AuthService} from '../../services/auth/auth.service';
 })
 export class ContactComponent implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.authService.checkThenRedirect();
+
   }
 
 }

@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import * as $ from 'jquery';
 import {AuthService} from '../../services/auth/auth.service';
+import {Router} from '@angular/router'; //or updated version
 
 
 @Component({
@@ -11,7 +12,7 @@ import {AuthService} from '../../services/auth/auth.service';
 export class NavComponent implements OnInit {
 
 
-  constructor(public authService: AuthService) {
+  constructor(public authService: AuthService, private router: Router) {
 
   }
 
@@ -24,4 +25,11 @@ export class NavComponent implements OnInit {
   logout() {
     this.authService.logout();
   }
+    navigateTo(value) {
+    if (value) {
+        this.router.navigate([value]);
+    }
+    return false;
+}
+
 }
