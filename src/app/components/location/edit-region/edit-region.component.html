@@ -1,0 +1,58 @@
+<div class="my-account-area ptb-30">
+
+  <div class="container">
+    <div class="row">
+
+<div class="col-lg-12" >
+  <h5>Изменить Область</h5>
+  <div class="login-form-wrapper">
+    <form action="#" class="ho-form ho-form-boxed " [formGroup]= "editFormRegion" (ngSubmit)=" onSubmit()" >
+      <div class="ho-form-inner">
+          <div class="single-input single-input-half">
+              <label for="countryId">Страна</label>
+              <select formControlName="countryId"  >
+                <option *ngFor="let country of countries" value = "{{country.countryId}}">{{country.countryName.en}}</option>
+              </select>
+
+            </div>
+
+
+        <div class="single-input single-input-half">
+          <label for="regionNameEn">Наименование области en*</label>
+          <input formControlName="regionNameEn" type="text" id="regionNameEn" >
+
+
+        </div>
+        <div class="single-input single-input-half">
+          <label for="regionNameKk">Наименование области kz*</label>
+          <input formControlName="regionNameKk" type="text" id="regionNameKk" >
+
+        </div>
+        <div class="single-input single-input-half">
+          <label for="regionNameRu">Наименование области ru*</label>
+          <input formControlName="regionNameRu" type="text"  id="regionNameRu">
+
+        </div>
+
+
+
+        <div class="single-input">
+
+          <button   class="btn btn-success" >
+            <span>Изменить</span>
+          </button>
+        </div>
+
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+</div>

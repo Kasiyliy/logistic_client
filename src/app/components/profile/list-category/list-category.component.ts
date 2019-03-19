@@ -24,20 +24,19 @@ export class ListCategoryComponent implements OnInit {
   }
 
   deleteCategory(category: Category): void {
-    if (window.confirm('Вы уверены, что хотите удалить?')){
+    if (window.confirm('Вы уверены, что хотите удалить?')) {
     this.categoryService.deleteCategory(category.productCategoryId)
       .subscribe( data => {
         this.categories = this.categories.filter(c => c !== category);
       })
     }
-  };
+  }
 
   editCategory(category: Category): void {
-    if (window.confirm('Вы уверены, что хотите изменить?')){
     localStorage.removeItem('editCategoryId');
     localStorage.setItem('editCategoryId', category.productCategoryId.toString());
     this.router.navigate(['edit-category']);
-    }
+
   }
 
 

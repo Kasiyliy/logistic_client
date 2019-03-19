@@ -1,6 +1,7 @@
 import { CategoryService } from 'src/app/services/category.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {NgbModule, NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +25,18 @@ import { ListProductComponent } from './components/profile/list-product/list-pro
 import { ListSubcategoryComponent } from 'src/app/components/profile/list-subcategory/list-subcategory.component';
 import { AddSubcategoryComponent } from 'src/app/components/profile/add-subcategory/add-subcategory.component';
 import { AddProductComponent } from 'src/app/components/profile/add-product/add-product.component';
+import { EditSubcategoryComponent } from 'src/app/components/profile/edit-subcategory/edit-subcategory.component';
+import { ShopComponent } from 'src/app/components/shop/shop.component';
+import { ShipperComponent } from 'src/app/components/shipper/shipper.component';
+import { AddShipperComponent } from 'src/app/components/profile/add-shipper/add-shipper.component';
+import { ListShipperComponent } from 'src/app/components/profile/list-shipper/list-shipper.component';
+import { EditShipperComponent } from 'src/app/components/profile/edit-shipper/edit-shipper.component';
+import { LocationComponent } from 'src/app/components/location/location.component';
+import { AddCountryComponent } from 'src/app/components/location/add-country/add-country.component';
+import { EditCountryComponent } from 'src/app/components/location/edit-country/edit-country.component';
+import { ListRegionComponent } from 'src/app/components/location/list-region/list-region.component';
+import { AddRegionComponent } from 'src/app/components/location/add-region/add-region.component';
+import { EditRegionComponent } from 'src/app/components/location/edit-region/edit-region.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +56,18 @@ import { AddProductComponent } from 'src/app/components/profile/add-product/add-
     ListSubcategoryComponent,
     AddSubcategoryComponent,
     AddProductComponent,
+    EditSubcategoryComponent,
+    ShopComponent,
+    ShipperComponent,
+    AddShipperComponent,
+    ListShipperComponent,
+    EditShipperComponent,
+    LocationComponent,
+    AddCountryComponent,
+    EditCountryComponent,
+    ListRegionComponent,
+    AddRegionComponent,
+    EditRegionComponent,
 
   ],
   imports: [

@@ -1,0 +1,45 @@
+<div class="col-md-6">
+    <h2> Доставщики</h2>
+    <button class="btn btn-primary" (click)= "addShipper()"> Добавить  Доставщика</button>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th class="hidden"></th>
+        <th>Адрес</th>
+        <th>Бин</th>
+        <th>Email</th>
+        <th>Моб.телефон</th>
+        <th>Пароль</th>
+        <th>Телефон</th>
+        <th>Имя En</th>
+        <th>Имя Kk</th>
+        <th>Имя Ru</th>
+        <th>Имя Доставщика</th>
+        <th>Редактировать</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let shipper of shippers">
+        <td class="hidden">{{shipper.shipperId}}</td>
+        <td>{{shipper.address}}</td>
+        <td>{{shipper.bin}}</td>
+        <td>{{shipper.email}}</td>
+        <td>{{shipper.mobilePhone}}</td>
+        <td>{{shipper.loginPassword}}</td>
+        <td>{{shipper.phoneNumber}}</td>
+
+        <td>{{shipper.shipperName.en}}</td>
+        <td>{{shipper.shipperName.kk}}</td>
+        <td>{{shipper.shipperName.ru}}</td>
+        <td>{{shipper.loginName}}</td>
+        <td>
+          <div class='d-flex'>
+
+          <button class="btn btn-danger m-2"  (click)= "deleteShipper(shipper)" > Удалить</button>
+
+          <button class="btn btn-primary m-2" (click)= "editShipper(shipper)" > Изменить</button>
+          </div></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>

@@ -18,9 +18,11 @@ export class ListProductComponent implements OnInit {
     });
   }
 
-  addProduct(): void{
+  addProduct(): void {
     this.router.navigate(['add-product']);
 
   }
+
+
 
 }

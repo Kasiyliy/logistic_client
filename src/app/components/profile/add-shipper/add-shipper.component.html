@@ -1,0 +1,101 @@
+<div class="my-account-area ptb-30">
+
+  <div class="container">
+    <div class="row">
+
+<div class="col-lg-12" >
+  <h5>Добавления доставщиков</h5>
+  <div class="login-form-wrapper">
+    <form action="#" class="ho-form ho-form-boxed " [formGroup]="shipperForm" >
+      <div class="ho-form-inner">
+          <div class="single-input single-input-half">
+              <label for="address">Адрес доставщика</label>
+              <input type="text" formControlName="address" id="address">
+              <div class="text-danger" *ngIf="shipperForm.controls['address'].errors?.required && !shipperForm.controls['address'].pristine">
+                необходимо ввести адрес                </div>
+            </div>
+            <div class="single-input single-input-half">
+                <label for="bin">БИН</label>
+                <input type="text" formControlName="bin" id="bin">
+                <div class="text-danger" *ngIf="shipperForm.controls['bin'].errors?.required && !shipperForm.controls['bin'].pristine">
+                  необходимо ввести БИН                </div>
+                  <div class="text-danger" *ngIf="shipperForm.controls['bin'].errors?.pattern">
+                    размер БИН 12
+                  </div>
+              </div>
+              <div class="single-input single-input-half">
+                  <label for="email">Email</label>
+                  <input type="text" formControlName="email" id="email">
+                  <div class="text-danger" *ngIf="shipperForm.controls['email'].errors?.required && !shipperForm.controls['email'].pristine">
+                    необходимо ввести email                </div>
+                    <div class="text-danger" *ngIf="shipperForm.controls['email'].errors?.email && !shipperForm.controls['email'].pristine">
+                      Поле для email
+                    </div>
+                </div>
+        <div class="single-input single-input-half">
+          <label for="password">Пароль</label>
+          <input type="password" formControlName="password" id="password">
+          <div class="text-danger" *ngIf="shipperForm.controls['password'].errors?.required && !shipperForm.controls['password'].pristine">
+            необходимо ввести Пароль                </div>
+        </div>
+
+        <div class="single-input single-input-half">
+          <label for="phoneNumber">Номер телефона*</label>
+          <input formControlName="phoneNumber" type="text" id="phoneNumber">
+          <div class="text-danger" *ngIf="shipperForm.controls['phoneNumber'].errors?.required && !shipperForm.controls['phoneNumber'].pristine">
+            необходимо ввести телефон                </div>
+
+        </div>
+        <div class="single-input single-input-half">
+          <label for="mobilePhone">Моб.телефон</label>
+          <input formControlName="mobilePhone" type="text" id="mobilePhone">
+          <div class="text-danger" *ngIf="shipperForm.controls['mobilePhone'].errors?.required && !shipperForm.controls['mobilePhone'].pristine">
+            необходимо ввести Моб.телефон                </div>
+        </div>
+        <div class="single-input single-input-half">
+          <label for="shipperNameEn">Наименование доставщика en*</label>
+          <input formControlName="shipperNameEn" type="text"  id="shipperNameEn">
+          <div class="text-danger" *ngIf="shipperForm.controls['shipperNameEn'].errors?.required && !shipperForm.controls['shipperNameEn'].pristine">
+            необходимо ввести наименование                </div>
+        </div>
+        <div class="single-input single-input-half">
+            <label for="shipperNameKk">Наименование доставщика kk*</label>
+            <input formControlName="shipperNameKk" type="text"  id="shipperNameKk">
+            <div class="text-danger" *ngIf="shipperForm.controls['shipperNameKk'].errors?.required && !shipperForm.controls['shipperNameKk'].pristine">
+              необходимо ввести наименование                </div>
+          </div>
+          <div class="single-input single-input-half">
+              <label for="shipperNameRu">Наименование доставщика ru*</label>
+              <input formControlName="shipperNameRu" type="text"  id="shipperNameRu">
+              <div class="text-danger" *ngIf="shipperForm.controls['shipperNameRu'].errors?.required && !shipperForm.controls['shipperNameRu'].pristine">
+                необходимо ввести наименование                </div>
+            </div>
+            <div class="single-input single-input-half">
+                <label for="username">Имя доставщика</label>
+                <input formControlName="username" type="text"  id="username">
+                <div class="text-danger" *ngIf="shipperForm.controls['username'].errors?.required && !shipperForm.controls['username'].pristine">
+                  необходимо ввести имю                </div>
+              </div>
+
+
+
+        <div class="single-input">
+          <button [disabled]="!shipperForm.valid" (click)="addShipper()"
+                        [ngClass]="{'disabled' : !shipperForm.valid}" class="btn btn-success">
+                  <span>Добваить</span>
+                </button>
+        </div>
+
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+</div>

@@ -12,31 +12,38 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 })
 export class EditCategoryComponent implements OnInit {
     category: Category;
-    editForm: FormGroup;
+    editFormCategory: FormGroup;
   constructor(private formBuilder: FormBuilder, private router: Router, private categoryService: CategoryService) { }
 
   ngOnInit() {
-    const categoryId = localStorage.getItem('editCategoryId');
+    const categoryId = parseInt(localStorage.getItem('editCategoryId'), 10 );
     if (!categoryId) {
       alert('Invalid action.');
       this.router.navigate(['list-category']);
       return;
     }
-    this.editForm = this.formBuilder.group({
+    this.editFormCategory = this.formBuilder.group({
       productCategoryId: [],
       addInfo: ['', Validators.required],
       categoryNameEn: ['', Validators.required],
       categoryNameRu: ['', Validators.required],
       categoryNameKk: ['', Validators.required],
     });
+
     this.categoryService.getCategoryById(+categoryId)
       .subscribe( data => {
-        this.editForm.setValue(data);
+        const category = new Category();
+        category.productCategoryId = data.productCategoryId;
+        category.addInfo = data.addInfo;
+        category.categoryNameEn = data.categoryName.en;
+        category.categoryNameRu = data.categoryName.ru;
+        category.categoryNameKk = data.categoryName.kk;
+        this.editFormCategory.setValue(category);
       });
   }
 
   onSubmit() {
-    this.categoryService.updateCategory(this.editForm.value)
+    this.categoryService.updateCategory(this.editFormCategory.value)
       .pipe(first())
       .subscribe(
         data => {

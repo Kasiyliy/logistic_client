@@ -1,0 +1,54 @@
+<div class="my-account-area ptb-30">
+
+  <div class="container">
+    <div class="row">
+
+<div class="col-lg-12" >
+  <h5>Добавления Cтран</h5>
+  <div class="login-form-wrapper">
+    <form action="#" class="ho-form ho-form-boxed " [formGroup]="countryForm" >
+      <div class="ho-form-inner">
+
+
+        <div class="single-input single-input-half">
+          <label for="countryNameEn">Наименование компании en*</label>
+          <input formControlName="countryNameEn" type="text" id="countryNameEn">
+          <div class="text-danger" *ngIf="countryForm.controls['countryNameEn'].errors?.required && !countryForm.controls['countryNameEn'].pristine">
+            необходимо ввести наименование                </div>
+
+        </div>
+        <div class="single-input single-input-half">
+          <label for="countryNameKk">Наименование компании kz*</label>
+          <input formControlName="countryNameKk" type="text" id="countryNameKk">
+          <div class="text-danger" *ngIf="countryForm.controls['countryNameKk'].errors?.required && !countryForm.controls['countryNameKk'].pristine">
+            необходимо ввести наименование                </div>
+        </div>
+        <div class="single-input single-input-half">
+          <label for="countryNameRu">Наименование компании ru*</label>
+          <input formControlName="countryNameRu" type="text"  id="countryNameRu">
+          <div class="text-danger" *ngIf="countryForm.controls['countryNameRu'].errors?.required && !countryForm.controls['countryNameRu'].pristine">
+            необходимо ввести наименование                </div>
+        </div>
+
+
+
+        <div class="single-input">
+          <button [disabled]="!countryForm.valid" (click)="addCountry()"
+                  [ngClass]="{'disabled' : !categoryForm.valid}" class="btn btn-success">
+            <span>Добавить</span>
+          </button>
+        </div>
+
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+</div>

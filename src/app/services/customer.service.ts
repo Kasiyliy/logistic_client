@@ -21,6 +21,11 @@ export class CustomerService {
     this.headers = this.headers.append('Content-Type', 'application/json');
   }
 
+  public listCustomers() {
+    return this.http.get<Customer[]>(environment.APIEndpoint + '/customer/all');
+
+  }
+
   public add(customer: Customer) {
     this.http.post(environment.APIEndpoint + this.addUrl, customer, {headers: this.headers, responseType: 'text'}).subscribe(res => {
       this.toastr.success(res);

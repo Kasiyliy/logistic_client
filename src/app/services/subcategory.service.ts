@@ -34,19 +34,20 @@ export class SubCategoryService {
     return this.http.get<SubCategory[]>(environment.APIEndpoint + '/product/category/subcategory/all');
   }
     public  getSubCategoryById(id: number) {
-      return this.http.get<SubCategory>(environment.APIEndpoint + '/product/category/subcategory' + id );
+      return this.http.get<SubCategory>(environment.APIEndpoint + '/product/category/subcategory/' + id );
   }
 
   public deleteSubCategory(id: number) {
-    return this.http.delete(environment.APIEndpoint + '/product/category/subcategory' + id);
+    return this.http.delete(environment.APIEndpoint + '/product/category/subcategory/' + id);
   }
 
   public deleteSubCategory2(id: number) {
-    return this.http.post(environment.APIEndpoint + '/product/category/subcategory' + id, {} , {params: { _method : 'delete'}});
+    return this.http.post(environment.APIEndpoint + '/product/category/subcategory/' + id, {} , {params: { _method : 'delete'}});
   }
 
-  public updateCategory(subcategory: SubCategory) {
-    return this.http.patch(environment.APIEndpoint + '/product/category/' + subcategory.productCategoryId, subcategory);
+  public updateSubCategory(subcategory: SubCategory) {
+    return this.http.patch(environment.APIEndpoint + '/product/category/subcategory/'
+    + subcategory.productSubcategoryId, subcategory);
   }
 
 

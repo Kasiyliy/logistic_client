@@ -1,0 +1,61 @@
+<div class="my-account-area ptb-30">
+
+    <div class="container">
+      <div class="row">
+
+  <div class="col-lg-12" >
+    <h5>Добавления Областей</h5>
+    <div class="login-form-wrapper">
+      <form action="#" class="ho-form ho-form-boxed " [formGroup]="regionForm" >
+        <div class="ho-form-inner">
+            <div class="single-input single-input-half">
+                <label for="cate">Страна</label>
+                <select formControlName="countryId" >
+                  <option *ngFor="let country of countries" value = "{{country.countryId}}">{{country.countryName.en}}</option>
+                </select>
+                <div class="text-danger" *ngIf="regionForm.controls['countryId'].errors?.required && !regionForm.controls['countryId'].pristine">
+                  необходимо ввести страну               </div>
+              </div>
+
+          <div class="single-input single-input-half">
+            <label for="regionNameEn">Наименование области en*</label>
+            <input formControlName="regionNameEn" type="text" id="regionNameEn">
+            <div class="text-danger" *ngIf="regionForm.controls['regionNameEn'].errors?.required && !regionForm.controls['regionNameEn'].pristine">
+              необходимо ввести наименование                </div>
+
+          </div>
+          <div class="single-input single-input-half">
+            <label for="regionNameKk">Наименование компании kz*</label>
+            <input formControlName="regionNameKk" type="text" id="regionNameKk">
+            <div class="text-danger" *ngIf="regionForm.controls['regionNameKk'].errors?.required && !regionForm.controls['regionNameKk'].pristine">
+              необходимо ввести наименование                </div>
+          </div>
+          <div class="single-input single-input-half">
+            <label for="regionNameRu">Наименование компании kz*</label>
+            <input formControlName="regionNameRu" type="text"  id="regionNameRu">
+            <div class="text-danger" *ngIf="regionForm.controls['regionNameRu'].errors?.required && !regionForm.controls['regionNameRu'].pristine">
+              необходимо ввести наименование                </div>
+          </div>
+
+
+
+          <div class="single-input">
+            <button [disabled]="!regionForm.valid" (click)="addRegion()"
+                    [ngClass]="{'disabled' : !regionForm.valid}" class="btn btn-success">
+              <span>Добавить</span>
+            </button>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+
+
+
+
+  </div>
+  </div>
+  </div>

@@ -55,7 +55,7 @@
         <div class="col-lg-3 col-md-6 col-sm-6 order-2 order-lg-3">
           <div class="header-icons">
             <div class="header-account">
-              <button class="header-accountbox-trigger"><span class="lnr lnr-user"></span> Мой аккаунт <i class="ion ion-ios-arrow-down"></i></button>
+              <button class="header-accountbox-trigger"><span class="lnr lnr-user"></span>Мой Аккаунт<i class="ion ion-ios-arrow-down"></i></button>
               <ul class="header-accountbox dropdown-list" *ngIf="!authService.authorized.value">
                 <li>
                   <a routerLink="login">Вход</a>
@@ -98,18 +98,21 @@
               <li class="dropdown-holder">
                 <a>Сервисы</a>
                 <ul class="hodropdown">
-                  <li><a routerLink="logistics">Логистика</a></li>
-                  <li><a routerLink="">Дорожный путь транспорта</a></li>
+                  <li><a routerLink="list-shipper">Доставщики</a></li>
+                  <li><a routerLink="location">Список стран</a></li>
+                  <li><a routerLink="list-region">Список областей</a></li>
+                  <li><a routerLink="air">Список районов</a></li>
                   <li><a routerLink="storage/management">Управление складскими помещениями</a></li>
+
                   <li><a routerLink="transfer">Перевозчик жидких грузов</a></li>
-                  <li><a routerLink="air">Авиаперевозка</a></li>
-                  <li><a routerLink="tourist">Туристическая сеть</a></li>
+
+
                 </ul>
               </li>
 
 
               <li><a routerLink="payment">Оплата и доставка</a></li>
-              <li><a routerLink="about">О нас</a></li>
+              <li><a routerLink="shop">Магазин</a></li>
 
 
               <li>

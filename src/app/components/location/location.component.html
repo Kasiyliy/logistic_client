@@ -1,0 +1,36 @@
+<div class="container">
+
+<h3 align= "center">Список Стран</h3>
+<button class="btn btn-primary" (click)="addCountry()"> Добавить  Страну</button>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th class="hidden">Id</th>
+        <th>Наименование EN</th>
+        <th>Наименование Kz</th>
+        <th>Наименование Ru</th>
+        <th>Редактировать </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let country of countries">
+        <td class="hidden"></td>
+        <td>{{country.countryName.en}}</td>
+        <td>{{country.countryName.kk}}</td>
+        <td>{{country.countryName.ru}}</td>
+        <td>
+          <div class='d-flex'>
+
+          <button class="btn btn-danger m-2"  (click)= "deleteCountry(country)" > Удалить</button>
+
+          <button class="btn btn-primary m-2"   (click)= "editCountry(country)" > Изменить</button>
+          </div></td>
+      </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+
+
+

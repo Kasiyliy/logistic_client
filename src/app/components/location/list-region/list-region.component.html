@@ -1,0 +1,36 @@
+
+<div class="container">
+    <h2 align="center"> Список Областей</h2>
+    <button class="btn btn-primary" (click)= "addRegion()" > Добавить  Область</button>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th class="hidden">Id</th>
+        <th>Id страны</th>
+        <th>Наименование Региона EN</th>
+        <th>Наименование Региона Kz</th>
+        <th>Наименование Региона Ru</th>
+        <th>Редактировать</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let region of regions" >
+        <td class="hidden">{{region.regionId}}</td>
+
+        <td>{{region.countryId}}</td>
+        <td>{{region.regionName.en}}</td>
+        <td>{{region.regionName.kk}}</td>
+        <td>{{region.regionName.ru}}</td>
+
+
+        <td>
+          <div class='d-flex'>
+
+          <button class="btn btn-danger m-2"   (click)= "deleteRegion(region)"> Удалить</button>
+
+          <button class="btn btn-primary m-2" (click)= "editRegion(region)"  > Изменить</button>
+          </div></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>

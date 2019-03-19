@@ -1,0 +1,84 @@
+<div class="my-account-area ptb-30">
+
+  <div class="container">
+    <div class="row">
+
+<div class="col-lg-12" >
+  <h5>Изменения данных доставщиков</h5>
+  <div class="login-form-wrapper">
+    <form action="#" class="ho-form ho-form-boxed "  [formGroup]="editFormShipper" (ngSubmit)="onSubmit()" >
+      <div class="ho-form-inner">
+          <div class="single-input single-input-half">
+              <label for="address">Адрес доставщика</label>
+              <input type="text" formControlName="address" id="address">
+
+            </div>
+            <div class="single-input single-input-half">
+                <label for="bin">БИН</label>
+                <input type="text" formControlName="bin" id="bin">
+
+              </div>
+              <div class="single-input single-input-half">
+                  <label for="email">Email</label>
+                  <input type="text" formControlName="email" id="email">
+
+                </div>
+        <div class="single-input single-input-half">
+          <label for="loginPassword">Пароль</label>
+          <input type="password" formControlName="loginPassword" id="loginPassword">
+
+        </div>
+
+        <div class="single-input single-input-half">
+          <label for="phoneNumber">Номер телефона*</label>
+          <input formControlName="phoneNumber" type="text" id="phoneNumber">
+
+
+        </div>
+        <div class="single-input single-input-half">
+          <label for="mobilePhone">Моб.телефон</label>
+          <input formControlName="mobilePhone" type="text" id="mobilePhone">
+
+        </div>
+        <div class="single-input single-input-half">
+          <label for="shipperNameEn">Наименование доставщика en*</label>
+          <input formControlName="shipperNameEn" type="text"  id="shipperNameEn">
+
+        </div>
+        <div class="single-input single-input-half">
+            <label for="shipperNameKk">Наименование доставщика kk*</label>
+            <input formControlName="shipperNameKk" type="text"  id="shipperNameKk">
+
+          </div>
+          <div class="single-input single-input-half">
+              <label for="shipperNameRu">Наименование доставщика ru*</label>
+              <input formControlName="shipperNameRu" type="text"  id="shipperNameRu">
+
+            </div>
+            <div class="single-input single-input-half">
+                <label for="loginName">Имя доставщика</label>
+                <input formControlName="loginName" type="text"  id="loginName">
+
+              </div>
+
+
+
+        <div class="single-input">
+          <button  class="btn btn-success">
+                  <span>Изменить</span>
+                </button>
+        </div>
+
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+</div>

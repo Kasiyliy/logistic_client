@@ -1,6 +1,7 @@
-export class SubCategory{
+import { Category } from './category';
+export class SubCategory {
+productCategoryId: number;
 productSubcategoryId: number;
-productCategoryId:	number;
 subCategoryAddInfo:	string;
 subCategoryNameEn:	string;
 subCategoryNameKk:	string;
@@ -9,6 +10,9 @@ subcategoryName: {
   en: string;
   kk: string;
   ru: string;
-}
+                  };
+
+category: Category;
+
 
 }
