@@ -9,7 +9,7 @@
       <form action="#" class="ho-form ho-form-boxed " [formGroup]="subcategoryForm" >
         <div class="ho-form-inner">
             <div class="single-input single-input-half">
-                <label for="cate">ID категории</label>
+                <label for="productCategoryId">ID категории</label>
                 <select formControlName="productCategoryId" >
                   <option *ngFor="let category of categories" value = "{{category.productCategoryId}}">{{category.categoryName.en}}</option>
                 </select>

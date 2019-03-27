@@ -1,12 +1,25 @@
+import { Category } from './category';
+import { SubCategory } from './subcategory';
+
 export class Products{
-categoryId:	number;
-description:	string;
-productId:	number;
+productId: number;
+productCategoryId:	number;
+productDescription:	string;
 productNameEn:	string;
 productNameKk:	string;
 productNameRu:	string;
-sellerCategoryId:	number;
 sellerCompanyId:	number;
 specialCharacteristicsId:	number;
-subCategoryId:	number;
+productSubCategoryId:	number;
+manufacturer: string;
+price: number;
+size: number;
+weight: number;
+uniqueIdNumber: string;
+serialNumber: number;
+
+category: Category;
+subcategory: SubCategory;
+
+
 }

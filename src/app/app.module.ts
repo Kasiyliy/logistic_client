@@ -37,6 +37,7 @@ import { EditCountryComponent } from 'src/app/components/location/edit-country/e
 import { ListRegionComponent } from 'src/app/components/location/list-region/list-region.component';
 import { AddRegionComponent } from 'src/app/components/location/add-region/add-region.component';
 import { EditRegionComponent } from 'src/app/components/location/edit-region/edit-region.component';
+import { DataTableModule } from 'angular-6-datatable';
 
 @NgModule({
   declarations: [
@@ -77,7 +78,8 @@ import { EditRegionComponent } from 'src/app/components/location/edit-region/edi
     ReactiveFormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    DataTableModule
   ],
   providers: [
     FormBuilder,
