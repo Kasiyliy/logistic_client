@@ -6,7 +6,7 @@
   <div class="col-lg-12" >
     <h5>Добавления  товаров</h5>
     <div class="login-form-wrapper">
-      <form action="#" class="ho-form ho-form-boxed " [formGroup]="productForm" >
+      <form action="#" class="ho-form ho-form-boxed " [formGroup]= "productForm" >
         <div class="ho-form-inner">
             <div class="single-input single-input-half">
                 <label for="productCategoryId">ID категории</label>
@@ -24,11 +24,11 @@
           </div>
 
           <div class="single-input single-input-half">
-            <label for="productSubCategoryId">ID подкатегории</label>
-            <select formControlName="productSubCategoryId" >
-              <option *ngFor="let subcategory of subcategories" value = "{{subcategory.productSubCategoryId}}">{{subcategory.subcategoryName.en}}</option>
+            <label for="productSubcategoryId">ID подкатегории</label>
+            <select formControlName="productSubcategoryId" >
+              <option *ngFor="let subcategory of subcategories" value = "{{subcategory.productSubcategoryId}}">{{subcategory.subcategoryName.en}}</option>
             </select>
-            <div class="text-danger" *ngIf="productForm.controls['productSubCategoryId'].errors?.required && !productForm.controls['productSubCategoryId'].pristine">
+            <div class="text-danger" *ngIf="productForm.controls['productSubcategoryId'].errors?.required && !productForm.controls['productSubcategoryId'].pristine">
               необходимо ввести ID подкатегории               </div>
 
           </div>
@@ -51,11 +51,14 @@
                 необходимо ввести наименование                </div>
             </div>
             <div class="single-input single-input-half">
-                <label for="sellerCompanyId">Компания *</label>
-                <input formControlName="sellerCompanyId" type="text"  id="sellerCompanyId">
-                <div class="text-danger" *ngIf="productForm.controls['sellerCompanyId'].errors?.required && !productForm.controls['sellerCompanyId'].pristine">
-                  необходимо ввести компании              </div>
-              </div>
+              <label for="sellerCompanyId">Компания</label>
+              <select formControlName="sellerCompanyId" >
+                <option *ngFor="let company of companies" value = "{{company.sellerCompanyId}}">{{company.sellerCompanyName.en}}</option>
+              </select>
+              <div class="text-danger" *ngIf="productForm.controls['sellerCompanyId'].errors?.required && !productForm.controls['sellerCompanyId'].pristine">
+                необходимо ввести компанию               </div>
+
+            </div>
               <div class="single-input single-input-half">
                   <label for="price">Цена*</label>
                   <input formControlName="price" type="text"  id="price">
@@ -81,9 +84,9 @@
                       необходимо ввести Производителя               </div>
                   </div>
                   <div class="single-input single-input-half">
-                      <label for="specialCharacteristicsId">Харатеристика*</label>
-                      <input formControlName="specialCharacteristicsId" type="text"  id="specialCharacteristicsId">
-                      <div class="text-danger" *ngIf="productForm.controls['specialCharacteristicsId'].errors?.required && !productForm.controls['specialCharacteristicsId'].pristine">
+                      <label for="specialCharacteristicId">Харатеристика*</label>
+                      <input formControlName="specialCharacteristicId" type="text"  id="specialCharacteristicId">
+                      <div class="text-danger" *ngIf="productForm.controls['specialCharacteristicId'].errors?.required && !productForm.controls['specialCharacteristicId'].pristine">
                         необходимо ввести спец.харатеристика      </div>
                     </div>
 
@@ -103,7 +106,7 @@
 
 
           <div class="single-input">
-            <button [disabled]="!productForm.valid" (click)="addProduct()"
+            <button [disabled]="!productForm.valid" (click)= "addProduct()"
                     [ngClass]="{'disabled' : !productForm.valid}" class="btn btn-success">
               <span>Добавить</span>
             </button>

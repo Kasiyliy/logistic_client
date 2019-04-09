@@ -37,7 +37,9 @@ import { EditCountryComponent } from 'src/app/components/location/edit-country/e
 import { ListRegionComponent } from 'src/app/components/location/list-region/list-region.component';
 import { AddRegionComponent } from 'src/app/components/location/add-region/add-region.component';
 import { EditRegionComponent } from 'src/app/components/location/edit-region/edit-region.component';
-import { DataTableModule } from 'angular-6-datatable';
+import { ListCharacterisicsComponent } from './components/profile/list-characterisics/list-characterisics.component';
+import { AddCharacteristicComponent } from 'src/app/components/profile/add-characteristic/add-characteristic.component';
+import { EditProductComponent } from 'src/app/components/profile/edit-product/edit-product.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +71,9 @@ import { DataTableModule } from 'angular-6-datatable';
     ListRegionComponent,
     AddRegionComponent,
     EditRegionComponent,
+    ListCharacterisicsComponent,
+    AddCharacteristicComponent,
+    EditProductComponent,
 
   ],
   imports: [
@@ -79,7 +84,6 @@ import { DataTableModule } from 'angular-6-datatable';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     AppRoutingModule,
-    DataTableModule
   ],
   providers: [
     FormBuilder,

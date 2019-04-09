@@ -26,4 +26,9 @@ export class CompanyService {
       this.toastr.error(err);
     });
   }
+
+  public listCompanies() {
+    return this.http.get<Company[]>(environment.APIEndpoint + '/seller/company/all');
+  }
+
 }

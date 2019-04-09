@@ -1,0 +1,59 @@
+<div class="my-account-area ptb-30">
+
+  <div class="container">
+    <div class="row">
+
+<div class="col-lg-12" >
+  <h5>Добавления характеристики товаров</h5>
+  <div class="login-form-wrapper">
+    <form action="#" class="ho-form ho-form-boxed " [formGroup]="characteristicForm" >
+      <div class="ho-form-inner">
+        <div class="single-input single-input-half">
+          <label for="addInfo">Инфо категории</label>
+          <input type="text" formControlName="addInfo" id="addInfo">
+          <div class="text-danger" *ngIf="characteristicForm.controls['addInfo'].errors?.required && !characteristicForm.controls['addInfo'].pristine">
+            необходимо ввести характеристику                </div>
+        </div>
+
+        <div class="single-input single-input-half">
+          <label for="characteristicNameEn">Наименование характеристики en*</label>
+          <input formControlName="characteristicNameEn" type="text" id="characteristicNameEn">
+          <div class="text-danger" *ngIf="characteristicForm.controls['characteristicNameEn'].errors?.required && !characteristicForm.controls['characteristicNameEn'].pristine">
+            необходимо ввести наименование                </div>
+
+        </div>
+        <div class="single-input single-input-half">
+          <label for="characteristicNameKk">Наименование характеристики ru*</label>
+          <input formControlName="characteristicNameKk" type="text" id="characteristicNameKk">
+          <div class="text-danger" *ngIf="characteristicForm.controls['characteristicNameKk'].errors?.required && !characteristicForm.controls['characteristicNameKk'].pristine">
+            необходимо ввести наименование                </div>
+        </div>
+        <div class="single-input single-input-half">
+          <label for="characteristicNameRu">Наименование характеристики kz*</label>
+          <input formControlName="characteristicNameRu" type="text"  id="characteristicNameRu">
+          <div class="text-danger" *ngIf="characteristicForm.controls['characteristicNameRu'].errors?.required && !characteristicForm.controls['characteristicNameRu'].pristine">
+            необходимо ввести наименование                </div>
+        </div>
+
+
+
+        <div class="single-input">
+          <button [disabled]="!characteristicForm.valid" (click)="addCharacteristic()"
+                  [ngClass]="{'disabled' : !characteristicForm.valid}" class="btn btn-success">
+            <span>Добавить</span>
+          </button>
+        </div>
+
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+</div>

@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
         this.toastrService.success('Авторизовано');
         this.authService.authorized.next(true);
         localStorage.setItem(environment.apiToken, resp);
-        this.router.navigateByUrl('/');
+        this.router.navigate(['home']);
       }
 
 

@@ -1,3 +1,4 @@
+import { OtpService } from './../../services/auth/otp.service';
 import {Component, OnInit} from '@angular/core';
 import {HttpClientModule, HttpClient} from '@angular/common/http';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
@@ -39,8 +40,12 @@ export class RegisterComponent implements OnInit {
   customerForm: FormGroup;
 
 
-  constructor(private http: HttpClient, private builder: FormBuilder, private checkCompany: CheckCompanyBinService,
-              private companyService: CompanyService, private customerService: CustomerService) {
+  constructor(private http: HttpClient,
+              private builder: FormBuilder,
+              private checkCompany: CheckCompanyBinService,
+              private companyService: CompanyService,
+              private otpService: OtpService,
+              private customerService: CustomerService) {
     this.companyForm = this.builder.group({
       sellerCompanyBin: [null, [Validators.required, Validators.pattern('^[0-9]{12}$')]],
       sellerCompanyEmail: [null, Validators.compose([Validators.required, Validators.email])],
@@ -91,7 +96,7 @@ export class RegisterComponent implements OnInit {
   }
 
   addCustomer() {
-    let customer = new Customer();
+    const customer = new Customer();
     customer.addInfo = this.customerForm.get('addInfo').value;
     customer.customerNameEn = this.customerForm.get('customerNameEn').value;
     customer.customerNameKk = this.customerForm.get('customerNameKk').value;
@@ -105,6 +110,11 @@ export class RegisterComponent implements OnInit {
     console.log(customer);
     this.customerForm.reset();
     this.customerService.add(customer);
+  }
+
+  checkOtp() {
+    const mobilePhone = this.customerForm.get('mobilePhone').value;
+    this.otpService.checkPhoneNumber(mobilePhone);
   }
 
   ngOnInit() {

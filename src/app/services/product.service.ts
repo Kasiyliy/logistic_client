@@ -13,7 +13,7 @@ import { Observable } from 'rxjs';
 })
 export class ProductService {
 
-  addUrl = 'product/addJson';
+  addUrl = '/product/addJson';
   headers: HttpHeaders;
 
   constructor(private http: HttpClient, private toastr: ToastrService) {

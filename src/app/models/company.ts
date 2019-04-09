@@ -1,4 +1,5 @@
 export class Company {
+  sellerCompanyId: number;
   password: string;
   sellerCompanyBin: string;
   sellerCompanyEmail: string;
@@ -7,5 +8,10 @@ export class Company {
   sellerCompanyNameKk: string;
   sellerCompanyNameRu: string;
   sellerCompanyPhone: string;
+  sellerCompanyName: {
+    en: string;
+    kk: string;
+    ru: string;
+  };
   username: string;
 }

@@ -202,10 +202,40 @@
 
 
               <div class="single-input">
-                <button [disabled]="!customerForm.valid" (click)="addCustomer()"
-                        [ngClass]="{'disabled' : !customerForm.valid}" class="btn btn-success">
-                  <span>Регистрация</span>
-                </button>
+
+                        <!-- Button to Open the Modal -->
+        <button [disabled]="!customerForm.valid" (click)="checkOtp()"
+                        [ngClass]="{'disabled' : !customerForm.valid}" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+          Проверить Номер
+        </button>
+        <div class="modal" id="myModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title">Modal Heading</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+
+              <!-- Modal body -->
+              <div class="modal-body">
+                <label for="otp">OTP *</label>
+                        <input  type="text"  id="otp">
+
+              </div>
+
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                  <button (click)="addCompany()" disabled class="btn btn-success">
+            <span>Регистрация</span>
+                  </button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
               </div>
             </div>
           </form>
@@ -218,4 +248,6 @@
     </div>
   </div>
 </div>
+<!-- The Modal -->
+
 <!--// My Account Page -->

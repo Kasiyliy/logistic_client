@@ -7,36 +7,44 @@
         <th class="hidden">Id</th>
         <th>ID категория продукта</th>
         <th>Описание продукта</th>
-        <th>ID продукта</th>
+        <th>ID подкатегории</th>
         <th>Наименование EN</th>
         <th>Наименование KZ</th>
         <th>Наименование RU</th>
-        <th>ID категории продавца</th>
-        <th>ID категории компании</th>
-        <th>Характеристика</th>
-        <th>ID подкатегории </th>
+        <th>Компания </th>
+        <th>Цена</th>
+        <th>Размер</th>
+        <th>ВЕС </th>
+        <th>Производитель</th>
+        <th>Характеристика </th>
+        <th>Серийный номер </th>
+        <th>Уникальный номер </th>
         <th>Редактировать </th>
       </tr>
       </thead>
       <tbody>
       <tr *ngFor="let product of products">
         <td class="hidden"></td>
-        <td>{{product.categoryId}}</td>
-        <td>{{product.description}}</td>
-        <td>{{product.productId}}</td>
+        <td>{{product.productCategoryId}}</td>
+        <td>{{product.productDescription}}</td>
+        <td>{{product.productSubcategoryId}}</td>
         <td>{{product.productNameEn}}</td>
         <td>{{product.productNameKk}}</td>
         <td>{{product.productNameRu}}</td>
-        <td>{{product.sellerCategoryId}}</td>
         <td>{{product.sellerCompanyId}}</td>
-        <td>{{product.specialCharacteristicsId}}</td>
-        <td>{{product.subCategoryId}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.size}}</td>
+        <td>{{product.weight}}</td>
+        <td>{{product.manufacturer}}</td>
+        <td>{{product.specialCharacteristicId}}</td>
+        <td>{{product.serialNumber}}</td>
+        <td>{{product.uniqueIdNumber}}</td>
         <td>
           <div class='d-flex'>
 
-          <button class="btn btn-danger m-2"  > Удалить</button>
+          <button class="btn btn-danger m-2"  (click)= "deleteProduct(product)" > Удалить</button>
 
-          <button class="btn btn-primary m-2"   > Изменить</button>
+          <button class="btn btn-primary m-2"  (click)= "editProduct(product)" > Изменить</button>
           </div></td>
       </tr>
       </tbody>

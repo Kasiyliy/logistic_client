@@ -1,3 +1,5 @@
+import { AddCharacteristicComponent } from 'src/app/components/profile/add-characteristic/add-characteristic.component';
+import { ListCharacterisicsComponent } from './components/profile/list-characterisics/list-characterisics.component';
 import { AddRegionComponent } from 'src/app/components/location/add-region/add-region.component';
 import { ListRegionComponent } from 'src/app/components/location/list-region/list-region.component';
 import { AddCountryComponent } from 'src/app/components/location/add-country/add-country.component';
@@ -25,6 +27,7 @@ import { ListShipperComponent } from './components/profile/list-shipper/list-shi
 import { EditShipperComponent } from './components/profile/edit-shipper/edit-shipper.component';
 import { EditCountryComponent } from './components/location/edit-country/edit-country.component';
 import { EditRegionComponent } from './components/location/edit-region/edit-region.component';
+import { EditProductComponent } from './components/profile/edit-product/edit-product.component';
 const routes: Routes = [
   {path : 'contact' , component : ContactComponent},
   {path : 'login' , component : LoginComponent},
@@ -50,7 +53,10 @@ const routes: Routes = [
   { path: 'edit-country', component: EditCountryComponent },
   { path: 'list-region', component: ListRegionComponent},
   { path: 'add-region', component: AddRegionComponent },
-  { path: 'edit-region', component: EditRegionComponent }
+  { path: 'edit-region', component: EditRegionComponent },
+  { path: 'list-characteristic' , component: ListCharacterisicsComponent },
+  { path: 'add-characteristic' , component: AddCharacteristicComponent },
+  { path: 'edit-product' , component: EditProductComponent }
 
 
 ];

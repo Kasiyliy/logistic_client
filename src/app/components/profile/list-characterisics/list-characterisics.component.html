@@ -1,0 +1,32 @@
+<div class="col-md-6">
+  <h2> Характеристики</h2>
+  <button class="btn btn-primary" (click)= "addCharacteristic()"> Добавить  Характеристику</button>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th class="hidden">Id</th>
+      <th>Инфо Характеристики</th>
+      <th>Наименование EN</th>
+      <th>Наименование RU</th>
+      <th>Наименование KZ</th>
+      <th>Редактировать  </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let characteristic of charasteristics">
+      <td class="hidden"></td>
+      <td>{{characteristic.addInfo}}</td>
+      <td>{{characteristic.characteristicName.en}}</td>
+      <td>{{characteristic.characteristicName.ru}}</td>
+      <td>{{characteristic.characteristicName.kk}}</td>
+      <td>
+        <div class='d-flex'>
+
+        <button class="btn btn-danger m-2"  > Удалить</button>
+
+        <button class="btn btn-primary m-2"   > Изменить</button>
+        </div></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

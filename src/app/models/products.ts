@@ -1,3 +1,4 @@
+import { Company } from './company';
 import { Category } from './category';
 import { SubCategory } from './subcategory';
 
@@ -9,8 +10,8 @@ productNameEn:	string;
 productNameKk:	string;
 productNameRu:	string;
 sellerCompanyId:	number;
-specialCharacteristicsId:	number;
-productSubCategoryId:	number;
+specialCharacteristicId:	number;
+productSubcategoryId:	number;
 manufacturer: string;
 price: number;
 size: number;
@@ -20,6 +21,7 @@ serialNumber: number;
 
 category: Category;
 subcategory: SubCategory;
+company: Company;
 
 
 }
